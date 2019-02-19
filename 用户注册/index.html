@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<script src="http://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+		<style type="text/css">
+           table{ margin:0px auto;}
+           .RightText{text-align: right;}
+           .s{margin:2px;padding:2px;font-size:12px; height:16px;}
+
+           .onSuccess{
+			    background:#EAFFE4 url(1.gif) no-repeat 0 center;
+				border:1px solid #3F9044;	
+				padding-left:18px;
+				height:16px;
+			}
+			.onError{
+			    background:#FFF2E9 url(2.gif) no-repeat 0 center;
+				border:1px solid #FF6600;
+				padding-left:18px;
+				height:16px;
+			}
+
+		</style>
+		<script>
+			$(function(){
+				$(":input").blur(function(){
+					$parent=$(this).parent();
+					$parent.find("span").remove();
+					$success="输入正确";
+					if($(this).is("#username")){
+						var username=$("#username").val();
+						var namereg = new RegExp($(this).attr('pattern'));
+						if(!username)
+						{
+							$parent.append("<span class='s onError'>用户名不能为空</span>");
+							return;
+
+						}
+						if(!namereg.test(username))
+						{
+							$parent.append("<span class='s onError'>用户名只能是6到18位字母、数字、下划线，需以字母开头</span>");
+							return;
+						}
+						else
+						{
+							$parent.append("<span class='s onSuccess'>"+$success+"</span>");
+							return;
+
+						}
+						
+				 	}
+					
+					if($(this).is("#pw1"))
+					{
+						var pw1 = $("#pw1").val();
+						var pw1reg = new RegExp($(this).attr('pattern'));
+						if(!pw1)
+						{
+							$parent.append("<span class='s onError'>密码不能为空</span>");
+							return;
+						}
+						if(!pw1reg.test(pw1))
+						{
+							$parent.append("<span class='s onError'>密码为6到16个字符，区分大小写</span>");
+							return;
+						}
+						else
+						{
+							$parent.append("<span class='s onSuccess'>"+$success+"</span>");
+							return;
+
+						}
+					}
+					
+					if($(this).is("#pw2"))
+					{
+						var pw2 = $("#pw2").val();
+						if(!pw2)
+						{
+							$parent.append("<span class='s onError'>密码不能为空</span>");
+							return;
+						}
+						if($("#pw1").val()!=pw2)
+						{
+							$parent.append("<span class='s onError'>两次密码输入不一致</span>");
+							return;
+						}
+						else
+						{
+							$parent.append("<span class='s onSuccess'>"+$success+"</span>");
+							return;
+
+						}
+					}
+					
+					if($(this).is("#e-mail"))
+					{
+						var email = $("#e-mail").val();
+						var emailreg = new RegExp($(this).attr('pattern'));
+						if(!email)
+						{
+							$parent.append("<span class='s onError'>邮箱不能为空</span>");
+							return;
+						}
+						if(!emailreg.test(email))
+						{
+							$parent.append("<span class='s onError'>请输入规范的邮箱格式</span>");
+							return;
+						}
+						else
+						{
+							$parent.append("<span class='s onSuccess'>"+$success+"</span>");
+							return;
+
+						}
+					}
+				
+	           	});	
+	           	$("#myform").submit(function(){
+					$(":input").trigger("blur");
+					if($(".onError").length!=0)
+					return false;
+				});
+
+			});
+
+		</script>
+	</head>
+	<body>
+			 <form id="myform">
+			 	<h3>用户注册</h3>
+					<table>
+						<tr>
+							<td class="RightText">
+								<h4>用户名</h4>
+							</td>
+							<td>
+								<input type="text" id="username" name="username" required pattern="^[a-zA-Z][a-zA-Z0-9_]{6,18}$"/>
+							</td>
+						</tr>  
+						<tr>
+							<td></td>
+							<td><p>6~18个字符，可使用字母、数字、下划线，需以字母开头</p></td>
+						</tr>
+						<tr>
+							<td class="RightText">
+								<h4>密码</h4>
+							</td>
+							<td>
+								<input type="password" id="pw1" name="pw1" required pattern="^[A-Za-z0-9_]{6,16}$"/><span class="s"> </span>
+							</td>
+						</tr> 
+						<tr>
+							<td></td>
+							<td><p>6~16个字符，区分大小写</p></td>
+						</tr>
+						<tr>
+							<td class="RightText">
+								<h4>确认密码</h4>
+							</td>
+							<td>
+								<input type="password" id="pw2" name="pw2" required pattern="^[A-Za-z0-9_]{6,16}$"/><span class="s"> </span>
+							</td>
+						</tr> 
+						<tr>
+							<td></td>
+							<td><p>请再次填写密码</p></td>
+						</tr>
+						<tr>
+							<td class="RightText">
+								<h4>Email</h4>
+							</td>
+							<td>
+								<input type="email" id="e-mail" name="e-mail" required pattern="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/><span class="s"> </span>
+							</td>
+						</tr> 
+						<tr>
+							<td></td>
+							<td><p>Email格式：rjxy@163.com</p></td>
+						</tr>
+					</table>
+					<div>
+						<input type="submit" id="btngo"  value=" 立即注册 " />
+					</div>
+				 </form>
+
+		
+	</body>
+</html>

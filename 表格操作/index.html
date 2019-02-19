@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		* { padding:0; margin:0; }
+			body { padding:20px;}
+			table  {  border-collapse:collapse;   }
+			th  {  border-bottom: 1px solid gray;  }
+			th,td {width:130px;text-align:left; line-height:30px;}
+			p{ margin-bottom:5px; ;}
+			p>span{margin:0px 5px ;}
+			#xm { width:60px;}
+			#xb { width:20px;}
+			#zzd { width:100px;}
+
+
+			.odd{ background-color:lavender; color:black;}
+			.even{background-color: deepskyblue; color:white ;}
+			.selected{ background-color: blueviolet; color:gainsboro; font-weight: bold;}
+			td:first-child,th:first-child{width: 70px;text-align: center;}
+		</style>
+		<script src="http://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+		<script>
+           $(function(){
+           	$("tr:odd").addClass("odd");/* 奇数行添加样式*/
+       	    $("tr:even").addClass("even"); /* 偶数行添加样式*/
+
+           	$('#tj').click(function(){
+                	
+           		var str='<tr><td><input type="checkbox"  name="ex2"></td><td>'+$('#xm').val()+'</td><td>'+$('#xb').val()+'</td><td>'+$('#zzd').val()+'</td></tr>'
+           		$("table tbody").append(str);
+           		$("tr").removeClass();
+           		$("tr:odd").addClass("odd");/* 奇数行添加样式*/
+       	        $("tr:even").addClass("even"); /* 偶数行添加样式*/
+           	});
+           	
+           	$('tbody').on('click','tr',function() {
+			    //判断当前是否选中
+		            var hasSelected=$(this).hasClass('selected');
+			    //如果选中，则移出selected类，否则就加上selected类
+			    $(this)[hasSelected?"removeClass":"addClass"]('selected')
+			    //查找内部的checkbox,设置对应的属性。
+			    .find(':checkbox').attr('checked',!hasSelected);
+			});
+
+			$('tbody>tr').dblclick(function() {  //双击事件	   
+			             
+				    $('[checked]').removeAttr("checked"); // $('[checked="true"]')是错的
+			            $('tr.selected').removeClass('selected');
+				    $(this).addClass('selected').find(':checkbox').attr('checked','true');
+			            $('#xm').val($(this).children('td:eq(1)').text());
+			            $('#xb').val($(this).children('td:eq(2)').text());
+			            $('#zzd').val($(this).children('td:eq(3)').text());
+				});
+			
+			$("#sc").click(function(){
+			        if(confirm("是否确定删除？")){
+			                $("tbody tr.selected").remove();  
+			                $("tr").removeClass();
+			                $("tr:odd").addClass("odd");  /* 奇数行添加样式*/
+			                $("tr:even").addClass("even"); /* 偶数行添加样式*/
+			        }                  
+			});
+			
+		    $("#xg").click(function(){
+			        if ($('tr.selected').length!=1)
+			        {
+			                alert('必须且只能选择一行'+$('tr.selected').length);
+			        }
+			        else
+			        {
+			                $('tr.selected').children('td:eq(1)').text( $('#xm').val() ) ;   
+			                $('tr.selected').children('td:eq(2)').text( $('#xb').val() ) ;
+			                $('tr.selected').children('td:eq(3)').text( $('#zzd').val() ) ;
+			        }             
+			       });
+			       
+           	$("#CheckedAll").click(function(){
+			    if(this.checked)
+			    {				 //如果当前点击的多选框被选中
+			        $('input[type=checkbox][name=ex2]').attr("checked", true );
+			        $("tbody>tr").addClass('selected');
+			    }
+			    else
+			    {
+			        $('input[type=checkbox][name=ex2]').attr("checked", false );
+			        $("tbody>tr").removeClass('selected');
+			    }
+			});
+
+
+           });
+		</script>
+	</head>
+	<body>
+		<p>双击某行后，该行数据出现在文本框中，修改文本框内容，再点击[修改]按钮</p>
+		<p><span>姓名:<input type="text" id='xm'></span>
+			<span>性别:<input type="text" id='xb'></span>
+			<span>暂住地:<input type="text" id='zzd'></span>
+            <span><input type="button" id='tj' value='添加'></span>
+            <span><input type="button" id='sc' value='删除'></span>
+            <span><input type="button" id='xg' value='修改'></span>
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th><input type="checkbox" id="CheckedAll">全选</th>
+					<th>姓名</th>
+				    <th>性别</th>
+				    <th>暂住地</th>
+				</tr>
+			</thead>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>张三</td>
+				<td>男</td>
+				<td>浙江宁波</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>迪丽热巴</td>
+				<td>女</td>
+				<td>新疆土耳其</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>孟爵</td>
+				<td>男</td>
+				<td>浙江温州</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>何炅</td>
+				<td>男</td>
+				<td>湖南长沙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>连清灵</td>
+				<td>女</td>
+				<td>浙江温州</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>Rain</td>
+				<td>男</td>
+				<td>浙江杭州</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"  name="ex2"></td>
+				<td>MAXMAN</td>
+				<td>女</td>
+				<td>浙江杭州</td>
+			</tr>
+
+		</table>
+	</body>
+</html>

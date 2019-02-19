@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>京东图片轮换</title>
+		
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+		<style type="text/css">
+			* { margin:0; padding:0; font-family:微软雅黑; font-size:24px;}
+			.all{width:790px; height:340px; position:absolute; overflow:hidden;}
+			#tplh{ width:790px; height:340px;  position:absolute; z-index:5;}
+			.slideimg { display:none; }
+			.timg { display:block;}
+			.fx{ display:block; 
+			      width:30px; 
+			      height:60px; 
+			      z-index:9;  
+			      opacity:0.3;  
+			      line-height:60px; 
+			      text-align:center; 
+			      background-color:gray;
+			      color:white;}
+			#left { position:absolute;left:0px; top:40%; }
+			#right { position:absolute;right:0px; top:40%; }
+			.fx:hover {opacity:0.6; cursor:pointer;}
+			#slideblock{padding:3px 3px;
+						z-index:20; 
+						border-radius:8px; 
+						position:absolute;
+						left:45%; 
+						bottom:20px; 
+						width:213px;
+						height:12px; 
+						background-color:#eaeaea;
+					    opacity:0.8;  }
+		    #slideblock ol { list-style:none;
+						     float:left;width:12px;
+						     height:12px;
+						     margin-left:13px; 
+						     border-radius:100%;
+						     background-color:white; }
+			#slideblock ol.selected {background-color:red;}
+		</style>
+	    <script>
+	   
+	   $(document).ready(function(){
+	    	
+	    	$("#right").click(
+	    		function(){
+	    		var tid=$(".selected").attr("id");
+             if  (tid=="o1")
+             {  $( "#o1" ).removeClass("selected"); $( "#img1" ).removeClass("timg");$( "#o2" ).addClass("selected"); $( "#img2" ).addClass("timg"); } 
+             if  (tid=="o2")
+             {  $( "#o2" ).removeClass("selected"); $( "#img2" ).removeClass("timg");$( "#o3" ).addClass("selected"); $( "#img3" ).addClass("timg"); } 
+             if  (tid=="o3")
+             {  $( "#o3" ).removeClass("selected"); $( "#img3" ).removeClass("timg");$( "#o4" ).addClass("selected"); $( "#img4" ).addClass("timg"); } 
+             if  (tid=="o4")
+             {  $( "#o4" ).removeClass("selected"); $( "#img4" ).removeClass("timg");$( "#o5" ).addClass("selected"); $( "#img5" ).addClass("timg"); } 		
+             if  (tid=="o5")
+             {  $( "#o5" ).removeClass("selected"); $( "#img5" ).removeClass("timg");$( "#o6" ).addClass("selected"); $( "#img6" ).addClass("timg"); } 
+             if  (tid=="o6")
+             {  $( "#o6" ).removeClass("selected"); $( "#img6" ).removeClass("timg");$( "#o7" ).addClass("selected"); $( "#img7" ).addClass("timg"); } 
+             if  (tid=="o7")
+             {  $( "#o7" ).removeClass("selected"); $( "#img7" ).removeClass("timg");$( "#o8" ).addClass("selected"); $( "#img8" ).addClass("timg"); } 
+             if  (tid=="o8")
+             {  $( "#o8" ).removeClass("selected"); $( "#img8" ).removeClass("timg");$( "#o1" ).addClass("selected"); $( "#img1" ).addClass("timg"); } 	
+	    			
+	    		}
+	     	);
+	    	
+	    	$("#left").click(
+	    		function(){
+	    		var tid=$(".selected").attr("id");
+             if  (tid=="o1")
+             {  $( "#o1" ).removeClass("selected"); $( "#img1" ).removeClass("timg");$( "#o8" ).addClass("selected"); $( "#img2" ).addClass("timg"); } 
+             if  (tid=="o8")
+             {  $( "#o8" ).removeClass("selected"); $( "#img8" ).removeClass("timg");$( "#o7" ).addClass("selected"); $( "#img3" ).addClass("timg"); } 
+             if  (tid=="o7")
+             {  $( "#o7" ).removeClass("selected"); $( "#img7" ).removeClass("timg");$( "#o6" ).addClass("selected"); $( "#img4" ).addClass("timg"); } 
+             if  (tid=="o6")
+             {  $( "#o6" ).removeClass("selected"); $( "#img6" ).removeClass("timg");$( "#o5" ).addClass("selected"); $( "#img5" ).addClass("timg"); } 		
+             if  (tid=="o5")
+             {  $( "#o5" ).removeClass("selected"); $( "#img5" ).removeClass("timg");$( "#o4" ).addClass("selected"); $( "#img6" ).addClass("timg"); } 
+             if  (tid=="o4")
+             {  $( "#o4" ).removeClass("selected"); $( "#img4" ).removeClass("timg");$( "#o3" ).addClass("selected"); $( "#img7" ).addClass("timg"); } 
+             if  (tid=="o3")
+             {  $( "#o3" ).removeClass("selected"); $( "#img3" ).removeClass("timg");$( "#o2" ).addClass("selected"); $( "#img8" ).addClass("timg"); } 
+             if  (tid=="o2")
+             {  $( "#o2" ).removeClass("selected"); $( "#img2" ).removeClass("timg");$( "#o1" ).addClass("selected"); $( "#img1" ).addClass("timg"); } 	
+	    			
+	    		}
+	     	);
+	     	
+	     	$("#divslide").mouseenter(
+			    function() {  
+			         $( "#left" ).css("display","inline-block");
+			         $( "#right" ).css("display","inline-block");
+			        }  
+			);
+			
+			$("#divslide").mouseleave(
+			    function() {   
+			        $( "#left" ).css("display","none");
+			        $( "#right" ).css("display","none");
+			        }  
+			);
+			
+			$("#right").mouseenter(
+			    function() {  
+			        $( "#left" ).css("display","inline-block");
+			        $( "#right" ).css("display","inline-block");
+			        }  
+			);
+			
+			$("#left").mouseenter(
+			        function() {  
+			             $( "#left" ).css("display","inline-block");
+			             $( "#right" ).css("display","inline-block");
+			        }  
+			);
+
+	     	
+	    });	
+	    </script>
+	</head>
+	<body>
+		<div class="all">
+			<div id="tplh">
+			<img class="slideimg timg" id="img1" src="img/jd01.jpg"/>
+			<img class="slideimg" id="img2" src="img/jd02.jpg"/>
+			<img class="slideimg" id="img3" src="img/jd03.jpg"/>
+			<img class="slideimg" id="img4" src="img/jd04.jpg"/>
+			<img class="slideimg" id="img5" src="img/jd05.jpg"/>
+			<img class="slideimg" id="img6" src="img/jd06.jpg"/>
+			<img class="slideimg" id="img7" src="img/jd07.jpg"/>
+			<img class="slideimg" id="img8" src="img/jd08.jpg"/>
+			</div>
+			<a id="left" class="fx">＜</a>
+            <a id="right" class="fx">＞</a>
+			<div id="slideblock">
+				<ul>
+					<ol id="o1"  class="selected"></ol>
+					<ol id="o2"></ol>
+					<ol id="o3"></ol>
+					<ol id="o4"></ol>
+					<ol id="o5"></ol>
+					<ol id="o6"></ol>
+					<ol id="o7"></ol>
+					<ol id="o8"></ol>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>百度一下</title>
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+		<style type="text/css">
+		#all{ text-align: center;}
+		#head{ margin-bottom:100px ;}
+		#lg{ bottom: 10px; width: 350px; height: 190px; }
+		.shousuo{margin-top:5px; margin-bottom: 20px;} 
+		.wb{width: 521px;
+            height: 20px;
+            padding: 9px 7px;
+            font: 16px arial;
+            border: 1px solid #b8b8b8;
+	        border-bottom: 1px solid #ccc;
+			border-right: 0;
+			vertical-align: top;
+			outline: none;
+			box-shadow: none;}
+		 #soutu{background-image: url(img/camera_new_679c15cc.png); 
+                width: 18px;
+			    height: 19px;
+			    display: inline-block;
+			    margin-left:-60px ;
+			    margin-right: 10px;
+			    margin-bottom: -5px;}
+		a:hover #soutu{background-image: url(img/camera_new_679c15cc.png);
+		               background-position: 0 19px;
+		               width: 18px; height: 19px;
+		              }
+	    .bdyx{width: 102px;
+			  height: 40px;
+			  line-height: 38px;
+			  padding: 0;
+			  border: 0;
+			  background: none;
+			  background-color: #38f;
+			  font-size: 16px;
+			  color: white;
+			 font-weight: normal;
+			 margin-left: -40px;
+      		}
+      	#dht{ width: 1100px; height: 35px; border: 1px solid gainsboro; 
+      	      margin:auto; padding-right:15px ; margin-top: -15px;}
+      	.left,.right{ display: inline-block; margin: 0; padding:0 ;}
+      	.left{width: 1000px; margin-top: 10px; text-align: left; margin-left: -40px;}
+      	ul,li{margin: 0;padding: 0;list-style-type: none;}
+      	li{ display: inline-block;}
+      	a{padding:10px 30px ;}
+      	.tx{ background-image: url(img/card_setts_fdb17359.png); 
+      	     width:20px ; height: 15px; 
+      	     background-position:-12px 0px;
+      	     display: inline-block;}
+      	 a:hover .tx{background-image: url(img/card_setts_fdb17359.png); 
+      	             width:20px ; height: 15px; 
+      	             background-position:50px 0px;}
+      	a:hover{background-color:lightgray; color:white ; padding:10px 30px ;}
+      	.gray{ background-color: lightgray; color: white; font-weight: bold;}
+      	 #sz{ background-image: url(img/card_setts_fdb17359.png); 
+      	     width:22px ; height: 18px; 
+      	     background-position:-120px 45px;
+      	     display: inline-block;
+      	     margin-right: -100px;
+			 }
+		a:hover  #sz{ background-image: url(img/card_setts_fdb17359.png); 
+		      	     width:22px ; height: 18px; 
+		      	     background-position:-120px 20px;
+      	             }
+      	.nr{ width: 1115px; height:450px ;border: 1px solid gainsboro; margin:auto; border-top:none ; padding-top:20px ; text-align: left;} 
+      	.dy{float: left;margin: 0 20px 25px 0; color: #999;}
+    span{margin: 0;padding: 0;border: 0; font-weight: 400; vertical-align: baseline;}
+    .dianying{position: absolute;
+			  width: 56px;
+			  height: 43px;
+			  background:url(img/dianying.png) no-repeat;
+			  margin-left:194px;
+              }
+    .fivestrats01{ color:gainsboro; position: relative; width:100px; height:20px ; text-align: left;}
+	.hightstarts01{color: darkgray; overflow: hidden; position: absolute; left: 0px; top:0 ;width:100px; height:20px ;}
+	#pf1{width: 68px;}
+	#pf2{ width:65px;}
+    .gr{ color:gray; margin-left:10px ;}
+    .pf{ background-color:rgb(245,245,245) ;width: 240px; height: 60px; padding-left: 10px; padding-top: 10px; margin-top:-10px ;}
+    .lefttu img{  height:350px ; width:250px ;}
+    .sj_bj{width: 220px; height:45px ; margin-top:-49px ;  padding-right:10px;position:absolute; background: linear-gradient(grey,black); ; opacity:0.3; }
+    .sj{color: white; text-align: right; width: 220px; height:35px ; margin-top:-49px ;  padding-right:10px;  padding-top:10px;opacity:1.0 ; position: absolute;}
+    .width{ width:240px ;}
+    .righttu{ margin-top: 16px;}
+    .righttu img{ width:230px ; height: 140px;}
+    .gtxt{ width: 230px; height: 70px; background-color: rgb(245,245,245); margin-top:-20px ; padding-top:3px ; margin-bottom:20px ;}
+	
+	
+	
+		</style>
+	</head>
+	<body>
+		<div id="all">
+		   <div id="head">
+				<img id="lg" src="img/百度logo.png" />
+				<div class="shousuo">
+					<span>
+						<input type="text" class="wb" maxlength="100" autocomplete="off" />
+						<a><span id="soutu"></span></a>
+					</span>
+					<span>
+						<input type="submit" value="百度一下" class="bdyx"/>
+					</span>
+				</div>
+		    </div>
+		   <div id="gz_main">
+		      <div id="dht">
+		      	<div class="left">
+		      		<ul>
+		      		<li>
+		      			<a>
+		      			<span class="tx"></span>
+		      			我的关注
+		      			</a>
+		      		</li>
+		      		<li>
+		      			<a>推荐</a>
+		      		</li>
+		      		<li>
+		      			<a>导航</a>
+		      		</li>
+		      		<li>
+		      			<a class="gray">视频</a>
+		      		</li>
+		      		<li>
+		      			<a>购物</a>
+		      		</li>
+		      	</ul>
+		      	</div>
+		      	<div class="right">
+		      		<a><span id="sz"></span></a>
+		      	</div>
+		      </div>
+		      <div class="nr">
+		      	<table align="center" width="95%" border="0" cellspacing="2" cellpadding="0">
+  <tr>
+    <td><table class="lefttu" width="100%" border="0" cellspacing="2" cellpadding="0">
+      <tr>
+        <td><span class="dianying"></span>
+		      	  			<img src="img/谍影重重.jpg"/>
+		      	  			<div class="sj_bj width"></div>
+		      	  			<div class="sj width">118:00</div>
+		      	  			<div class="pf">
+		      	  			<span>谍影重重4</span>
+		      	  			<div class="fivestrats01"><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><div class="hightstarts01" id="pf1"><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span></div><span class="gr">8.5</span>
+			</div>
+			</div>
+		</td>
+        <td><span class="dianying"></span>
+		      	  				<img src="img/冰川时代.jpg"/>
+		      	  				<div class="sj_bj width"></div>
+		      	  				<div class="sj width">87:45</div>
+		      	  				<div class="pf">
+		      	  			     <span>冰川时代1</span>
+                                <div class="fivestrats01"><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><div class="hightstarts01" id="pf2"><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span><span class="iconfont icon-shoucang"></span></div><span class="gr">8.1</span>
+			</div>
+			</div>
+        </td>
+      </tr>
+    </table></td>
+    <td><table class="righttu" width="100%" border="0" cellspacing="2" cellpadding="0">
+      <tr>
+        <td>
+        	<img src="img/穿衣搭配.jpg"/>
+        	<div class="sj_bj"></div>
+        	<div class="sj">00:35</div>
+        	<div class="gtxt">
+			<p>&nbsp;《芭莎每日一搭》初秋酷帅性<br/>感的穿衣大法</p>
+			</div>
+        </td>
+        <td><img src="img/脑死亡.jpg"/>
+        <div class="sj_bj"></div>
+            <div class="sj">02:12</div>
+        	<div class="gtxt">
+			<p>&nbsp;&nbsp;公狗主人被宣布脑死亡</p>
+			</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<img src="img/承租农田.jpg"/>
+        	<div class="sj_bj"></div>
+        	<div class="sj">04:18</div>
+            <div class="gtxt">
+            <p>&nbsp;承租农田被收回！近十三万棵<br/>桂花树苗销售无</p>
+            </div》
+        </td>
+        <td>
+        	<img src="img/股市行情.jpg"/>
+        	<div class="sj_bj"></div>
+        	<div class="sj">04:50</div>
+        	<div class="gtxt">
+        	<p>&nbsp;0825陈文：涨停板看流通量和<br/>行业情况</p>
+        	</div》
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+		      </div>
+		   </div>
+		</div>
+	</body>
+</html>

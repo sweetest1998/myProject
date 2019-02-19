@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+	    .centent{ display: inline-block; margin-right:40px ;}
+		span{ display: block; 
+		      background-color: gray; 
+		      margin:10px 0px ; 
+		      color: white;
+		      padding: 5px;}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+<script>
+		$(function(){
+			$("#add").click(function(){
+				var $options=$("#select1 option:selected");
+				if ($options.length==0)
+				{
+					alert("请选择选项或选项为空！");
+				}
+				else
+				{
+				$options.clone(true).appendTo("#select2");
+				$options.remove();
+				}
+			});
+			$("#remove").click(function(){
+				var $options=$("#select2 option:selected");
+				if ($options.length==0)
+				{
+					alert("请选择选项或选项为空！");
+				}
+				else
+				{
+				$options.clone(true).appendTo("#select1");
+				$options.remove();
+				}
+			});
+			$("#add_all").click(function(){
+				var $options=$("#select1 option");
+				if ($options.length==0)
+				{
+					alert("请选择选项或选项为空！");
+				}
+				else
+				{
+				$options.clone(true).appendTo("#select2");
+				$options.remove();
+				}
+			});
+			$("#remove_all").click(function(){
+				var $options=$("#select2 option");
+				if ($options.length==0)
+				{
+					alert("请选择选项或选项为空！");
+				}
+				else
+				{
+				$options.clone(true).appendTo("#select1");
+				$options.remove();
+				}
+			});
+		});
+	</script>
+	<body>
+		<div class="centent">
+			<select multiple="multiple" id="select1" style="width: 150px;height: 160px;">
+				<option  value="1">选项1</option>
+				<option  value="2">选项2</option>
+				<option  value="3">选项3</option>
+				<option  value="4">选项4</option>
+				<option  value="5">选项5</option>
+				<option  value="6">选项6</option>
+				<option  value="7">选项7</option>
+			</select>
+			<div>
+				<span id="add" onclick="selTOright()">选中添加到右边&gt;&gt;</span>
+				<span id="add_all" onclick="selTOrightAll()">全部添加到右边&gt;&gt;</span>
+			</div>
+		</div>
+		<div class="centent">
+			<select multiple="multiple" id="select2" style="width: 150px;height: 160px;">
+				<option  value="8">选项8</option>
+			</select>
+			<div>
+				<span id="remove" onclick="selTOleft()">&lt;&lt;选中删除到左边</span>
+				<span id="remove_all" onclick="selTOleftAll()">&lt;&lt;全部删除到左边</span>
+			</div>
+		</div>
+	</body>
+</html>

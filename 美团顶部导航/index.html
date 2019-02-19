@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美团顶部导航</title>
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+		<style type="text/css">
+			*{margin:0 ; padding:0 ;}
+			ul,li{list-style: none;}
+			a{text-decoration:none ; color:gray ;}
+			header{width:100%; min-width:1170px; height:32px; font-size:12px;}
+			.nav{width:1170px ; height:32px ; margin:0 auto;background-color:rgb(249,249,249);}
+			.left{width:310px; height:32px;float:left;}
+			.right{width:570px; height:32px; float:right; }
+			.red{color:red ;}
+			.dropdown,.dropdown1{ margin-right:20px ;}
+			.dropdown>a:hover{ color: #31BBAC;}
+			.icon-shoucang1{font-size:5px ;}
+			.dropdown>a>.iconfont:last-child{display:none ;}
+		    .dropdown:hover>a>.iconfont:first-child{display:none ;}
+		    .dropdown:hover>a>.iconfont:last-child{display:inline; color:red ;font-size:5px;}
+		    .left>.dropdown>a{width:78px;
+						     height:32px; 
+						     text-align:center;
+						     line-height:32px;
+						     display:block; 
+						     background-color:rgb(249,249,249); 
+						     color:#666;}
+			.right>.dropdown>a{width:78px;
+						     height:16px; 
+						     text-align:center;
+						     line-height:16px;
+						     display:block; 
+						     background-color:rgb(249,249,249); 
+						     color:gray;
+						     border-right:1px solid #efefef;}
+			.left .dropdown{ float:left; }
+		    .right .dropdown,.right .dropdown1{ float:left; 
+											    padding:8px 0px 1px;
+											    position:relative; 
+											    border:1px solid rgb(249,249,249);
+											    }
+            .dropdownlist {background-color:white; 
+			               padding:16px 0px;
+			               border:1px solid rgb(203,203,203);
+			               position:absolute; 
+			               right:-1px;
+			               display:none;
+			               width:78px; 
+			               overflow:hidden;}
+			.dropdown1:hover{border-bottom: 1px solid white;}
+			.dropdown1:hover .dropdownlist { display:block;}
+			.icon-xiangshang2,.icon-xiangxia1{font-size:2px ; font-weight: lighter;}
+		    .dropdown1>a>.iconfont:last-child{display:none ;}
+		     .dropdown1:hover>a>.iconfont:first-child{display:none ;}
+		    .dropdown1:hover>a>.iconfont:last-child{display:inline; color:#31bbac ;}
+			.listitem { padding:0px 12px; height:30px; line-height:30px; width:100%;  }
+		    .dropdown1:hover {background-color:white;border-top:1px solid rgb(203,203,203);border-left:1px solid rgb(203,203,203);border-right:1px solid rgb(203,203,203); border-bottom:1px solid white ;}
+            .dropdown1:hover a{ background-color:white;}
+            a:hover{color: #31BBAC; text-decoration: underline;}
+            .dropdown1:hover>a{color: #31BBAC;}
+            .dropdown1>a>ul>li>a{color: gray;}
+            .dropdown:hover a{color: gray;}
+            .dropdown:hover .red{color: red;}
+			.width220 { width:220px;} 
+			.width92 { width:92px;} 
+			.width98 { width:98px;} 
+			.width120 { width:120px;} 
+			.width79 { width:79px;} 
+			.sc>a:hover{text-decoration: none;}		
+			.dd>a:hover{color: #31BBAC;}   
+			.dropdown1{border-right:1px solid #efefef ;}  
+			.left>ul>li{margin-top: 5px;}
+		</style>
+	</head>
+	<body>
+		<header>
+			
+			<div class="nav">
+				<div class="left">
+			    	<ul>
+			            <li class="dropdown sc"><a href="#"><span class="iconfont icon-shoucang1"></span><span class="iconfont icon-shoucang"></span>收藏美团</a></li>
+			            <li class="dropdown"><a class="red" href="#">登录</a></li>
+			            <li class="dropdown"><a href="#">注册</a></li>
+			        </ul>
+			    </div>
+				<div class="right">
+			    	<ul>
+			            <li class="dropdown dd"><a href="#">我的订单</a></li>
+			            <li class="dropdown1"><a href="#">我的美团<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width79">
+			                    <li class="listitem"><a href="#">我的订单</a></li>
+			                    <li class="listitem"><a href="#">我的评价</a></li>
+			                    <li class="listitem"><a href="#">我的收藏</a></li>
+			                    <li class="listitem"><a href="#">抵用卷</a></li>
+			                    <li class="listitem"><a href="#">我的余额</a></li>
+			                    <li class="listitem"><a href="#">账户设置</a></li>
+			                </ul>
+			            </li>
+			            <li class="dropdown1"><a href="#">最近浏览<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width220">
+			                	<li class="listitem"><a href="#">暂无浏览记录</a></li>
+			                </ul>
+			            </li>
+			            <li class="dropdown1"><a href="#">联系客服<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width92">
+			                    <li class="listitem"><a href="#">申请退款</a></li>
+			                    <li class="listitem"><a href="#">申请退换货</a></li>
+			                    <li class="listitem"><a href="#">查看美团券</a></li>
+			                    <li class="listitem"><a href="#">换绑手机号</a></li>
+			                    <li class="listitem"><a href="#">常见问题</a></li>
+			                </ul>
+			            </li>
+			            <li class="dropdown1"><a href="#">我是商家<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width98">
+			                    <li class="listitem"><a href="#">登录商家中心</a></li>
+			                    <li class="listitem"><a href="#">我想合作</a></li>
+			                    <li class="listitem"><a href="#">手机免费开店</a></li>
+			                    <li class="listitem"><a href="#">商家营销平台</a></li>
+			                </ul>
+			            </li>
+			            <li class="dropdown1"><a href="#">代理商招募<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width120">
+			                    <li class="listitem"><a href="#">餐饮代理商招募</a></li>
+			                    <li class="listitem"><a href="#">非餐饮代理商招募</a></li>
+			                </ul>
+			            </li>
+			            <li class="dropdown1"><a href="#">更多<span class="iconfont icon-xiangshang2"></span><span class="iconfont icon-xiangxia1"></span></a>
+			            	<ul class="dropdownlist width79">
+			                    <li class="listitem"><a href="#">手机版</a></li>
+			                    <li class="listitem"><a href="#">邮件订阅</a></li>
+			                    <li class="listitem"><a href="#">邀请好友</a></li>
+			                </ul>
+			            </li>
+			        </ul>
+			    </div>
+			</div>
+		</header>
+	</body>
+</html>
